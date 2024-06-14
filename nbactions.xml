@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.1.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs>-Djavax.net.ssl.trustStore=/Users/saulramirez/saul.ramirez/coding/utils/cacerts -Djavax.net.ssl.trustStorePassword=changeit -Dweblogic.security.allowCryptoJDefaultJCEVerification=true -Dweblogic.security.allowCryptoJDefaultPRNG=true -Djava.protocol.handler.pkgs=com.sun.net.ssl.internal.www.protocol -Dssl.SocketFactory.provider=com.sun.net.ssl.internal.SSLSocketFactoryImpl -DUseSunHttpHandler=true -Dweblogic.wsee.client.ssl.usejdk=true</exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.appArgs></exec.appArgs>
+                <exec.mainClass>sro.LoginSampleApplication</exec.mainClass>
+                <exec.executable>java</exec.executable>
+            </properties>
+        </action>
+        <action>
+            <actionName>debug</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.1.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs>-Djavax.net.ssl.trustStore=/Users/saulramirez/saul.ramirez/coding/utils/cacerts -Djavax.net.ssl.trustStorePassword=changeit -Dweblogic.security.allowCryptoJDefaultJCEVerification=true -Dweblogic.security.allowCryptoJDefaultPRNG=true -Djava.protocol.handler.pkgs=com.sun.net.ssl.internal.www.protocol -Dssl.SocketFactory.provider=com.sun.net.ssl.internal.SSLSocketFactoryImpl -DUseSunHttpHandler=true -Dweblogic.wsee.client.ssl.usejdk=true -agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.appArgs></exec.appArgs>
+                <exec.mainClass>sro.LoginSampleApplication</exec.mainClass>
+                <exec.executable>java</exec.executable>
+                <jpda.listen>true</jpda.listen>
+            </properties>
+        </action>
+        <action>
+            <actionName>profile</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:3.1.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.vmArgs>-Djavax.net.ssl.trustStore=/Users/saulramirez/saul.ramirez/coding/utils/cacerts -Djavax.net.ssl.trustStorePassword=changeit -Dweblogic.security.allowCryptoJDefaultJCEVerification=true -Dweblogic.security.allowCryptoJDefaultPRNG=true -Djava.protocol.handler.pkgs=com.sun.net.ssl.internal.www.protocol -Dssl.SocketFactory.provider=com.sun.net.ssl.internal.SSLSocketFactoryImpl -DUseSunHttpHandler=true -Dweblogic.wsee.client.ssl.usejdk=true</exec.vmArgs>
+                <exec.args>${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}</exec.args>
+                <exec.mainClass>sro.LoginSampleApplication</exec.mainClass>
+                <exec.executable>java</exec.executable>
+                <exec.appArgs></exec.appArgs>
+            </properties>
+        </action>
+    </actions>

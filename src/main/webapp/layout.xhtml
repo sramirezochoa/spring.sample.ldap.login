@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"  xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="./css/default.css" />
+        <link rel="stylesheet" href="./css/tableLayout.css" />
+        <title>Sensata Application</title>
+    </h:head>
+
+    <h:body>
+        <table cellspacing="10px" style="width: 100%">
+            <!--tr>
+                <td id="top" colspan="2">
+                    <p:toolbar styleClass="top-element">                        
+                        <p:toolbarGroup align="right">
+                            <div class="card">                                
+                                <p:avatar icon="pi pi-user" styleClass="mr-2" size="xlarge" />
+                                <h5><h:outputText value="User Name" /></h5>
+                            </div>
+                        </p:toolbarGroup>                        
+                    </p:toolbar>
+                </td>
+            </tr-->
+            <tr>
+                <td id="right">
+                    <div class="card" style="text-align: center">                                
+                        <p:avatar icon="pi pi-user" styleClass="mr-2" size="xlarge" />
+                        <h5><h:outputText value="${homeController.username}" /></h5>
+                    </div>                      
+                    <p:panelMenu style="width:200px">
+                        <p:submenu label="Actions" expanded="true">
+                            <p:menuitem value="Save (Non-Ajax)" url="http://www.primefaces.org" ajax="false"
+                                        icon="pi pi-save"/>
+                            <p:menuitem value="Update" url="http://www.primefaces.org" icon="pi pi-refresh"/>
+                            <p:menuitem value="Delete" url="http://www.primefaces.org" icon="pi pi-times"/>
+                        </p:submenu>
+                        <p:submenu label="Settings" expanded="true">
+                            <p:menuitem value="Log out" url="./logout" icon="pi pi-sign-out"/>
+                        </p:submenu>
+                    </p:panelMenu>                        
+                </td>                
+                <td id="content">
+                    <ui:insert name="content">Content</ui:insert>
+                </td>
+            </tr>
+            <tr>
+                <td id="bottom" colspan="2">
+                    <ui:insert name="bottom">Bottom</ui:insert>
+                </td>
+            </tr>
+        </table>
+    </h:body>
+
+</html>
