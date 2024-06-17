@@ -11,7 +11,7 @@
     <groupId>sro.pub</groupId>
     <artifactId>login-sample</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Login Sample (AD)</name>
+    <name>Spring Boot Login (AD)</name>
     <description>SSO Login</description>
     <properties>
         <java.version>1.8</java.version>
